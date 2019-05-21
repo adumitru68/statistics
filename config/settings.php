@@ -120,5 +120,7 @@ return [
 
 	'locations' => [
 		'templates' => __DIR__ . '/../templates/',
-	]
+	],
+
+	'api_info' => require __DIR__ . '/api_info.php',
 ];

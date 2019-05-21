@@ -21,6 +21,7 @@ class InfoController
 	 * @param Response $response
 	 * @param array    $args
 	 * @return Response
+	 * @throws \Qpdb\Common\Exceptions\CommonException
 	 */
 	public function __invoke( Request $request, Response $response, array $args = [] ) {
 
@@ -29,22 +30,14 @@ class InfoController
 
 	/**
 	 * @return array
+	 * @throws \Qpdb\Common\Exceptions\CommonException
 	 */
 	private function getApiInfo() {
 		$domain = Core::helper()->getServerProtocol() . Core::helper()->getServerName();
-		$apiInfo = [
-			'app_name' => 'Job Leads statistics application',
-			'endpoints' => [
-				[
-					'output' => 'overall amount of taxes collected per state',
-					'url' => $domain . '/api/taxes/sum/state/{id}/'
-				],
-				[
-					'output' => 'average amount of taxes collected per state',
-					'url' => $domain . '/api/taxes/avg/state/{id}/'
-				],
-			],
-		];
+		$apiInfo = Core::settings()->getProperty('api_info');
+		foreach ($apiInfo['endpoints'] as $key => $endpoint) {
+			$apiInfo['endpoints'][$key]['url'] = $domain . $endpoint['url'];
+		}
 
 		return $apiInfo;
 	}

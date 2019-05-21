@@ -17,8 +17,19 @@ class AppHelper
 
 	use AsSingletonPrototype;
 
-	public function stringTools() {
 
+	/**
+	 * @return StringTools
+	 */
+	public function stringTools() {
+		return StringTools::getInstance();
+	}
+
+	/**
+	 * @return ArrayTools
+	 */
+	public function arrayTools() {
+		return ArrayTools::getInstance();
 	}
 
 	/**
