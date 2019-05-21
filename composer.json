@@ -1,4 +1,16 @@
 {
+    "require": {
+        "php": ">=7.2",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "qpdb/slim_application_di": "^0.0.5",
+        "respect/validation": "1.1.15",
+        "qpdb/query-builder": "^2.0",
+        "qpdb/pdo-wrapper": "^1.0",
+        "qpdb/html-builder": "^1.0",
+        "qpdb/common": "^1.0"
+    },
     "autoload": {
         "psr-4": {
             "JL\\": "src/"
