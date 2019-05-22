@@ -51,15 +51,6 @@ class DbConfig implements PdoWrapperConfigInterface
 	/**
 	 * @return array
 	 */
-	public function getPdoOptions() {
-		return [
-			\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;",
-		];
-	}
-
-	/**
-	 * @return array
-	 */
 	public function getExecCommands() {
 		return [
 			"SET time_zone='+00:00'"
