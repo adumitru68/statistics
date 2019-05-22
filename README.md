@@ -18,5 +18,6 @@
 	</Directory>
 </VirtualHost>
 ```
+- change [db_credentials](https://github.com/adumitru68/statistics/blob/master/config/settings.php)
 - add local domain in windows hosts file
 - run composer install (in root project)
