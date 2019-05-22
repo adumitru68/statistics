@@ -53,7 +53,7 @@ class DbConfig implements PdoWrapperConfigInterface
 	 */
 	public function getPdoOptions() {
 		return [
-			\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET time_zone='+00:00'",
+			\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;",
 		];
 	}
 
@@ -61,7 +61,9 @@ class DbConfig implements PdoWrapperConfigInterface
 	 * @return array
 	 */
 	public function getExecCommands() {
-		return [];
+		return [
+			"SET time_zone='+00:00'"
+		];
 	}
 
 	/**
@@ -70,7 +72,7 @@ class DbConfig implements PdoWrapperConfigInterface
 	 * @throws \Exception
 	 */
 	public function handlePdoException( \Exception $e, $otherInformation = [] ) {
-		throw new \Exception( $e );
+		throw new \Exception( $e->getMessage() );
 	}
 
 	/**

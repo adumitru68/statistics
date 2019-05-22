@@ -1,0 +1,38 @@
+<?php
+/** @var \Qpdb\HtmlBuilder\Elements\HtmlContainer $tableRows */
+/** @var \Qpdb\HtmlBuilder\Elements\HtmlContainer $otherInfo */
+
+use Qpdb\HtmlBuilder\Html;
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Statistics app</title>
+	<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div class="content">
+	<div class="content-header">
+		Statistics app
+	</div>
+    <div class="margin_div">
+        <table class="customTable">
+            <thead>
+            <tr>
+                <th>State</th>
+                <th>Total taxes</th>
+                <th>Average taxes</th>
+                <th>Average percent</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php $tableRows->render() ?>
+            </tbody>
+        </table>
+    </div>
+    <?php $otherInfo->render()?>
+</div>
+</body>
+</html>

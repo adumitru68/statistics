@@ -9,6 +9,6 @@ return function( App $app, ContainerInterface $container ) {
 	$app->add( new \Qpdb\SlimApplication\Middleware\TrailingSlash( true ) );
 	$app->add( \Qpdb\SlimApplication\Middleware\RouteValidation::class );
 
-	$app->map( [ 'GET' ], '/', \JL\Controllers\Site\HomeController::class )->setName('home');
+	$app->map( [ 'GET', 'POST' ], '/', \JL\Controllers\Site\HomeController::class )->setName('home');
 
 };
